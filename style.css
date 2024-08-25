@@ -7,7 +7,8 @@
 }
 
 body {
-  background: #121212;
+  background: #121212 url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -16,7 +17,7 @@ body {
 
 .registration-form {
   width: 470px;
-  background: #202020;
+  background: rgba(32, 32, 32, 0.9); /* Slightly transparent background for better readability */
   padding: 30px 60px;
   border-radius: 8px; /* Rounded corners for a smoother look */
 }
@@ -152,28 +153,99 @@ h6 {
 }
 
 @media screen and (max-width: 470px) {
-  body {
-    background: #202020;
-  }
-
   .registration-form {
     width: 100%;
     padding: 0 15px;
   }
 }
 
+
 /* CSS untuk preview gambar */
 #preview-container {
   margin-top: 10px;
   text-align: center; /* Center the content horizontally */
 }
+
 #logo-preview {
   max-width: 200px;
   height: auto;
   display: none;
   margin: 0 auto; /* Center the image horizontally */
 }
+
 #preview-text {
   color: #555;
   display: block;
+}
+
+/* Gaya Iklan */
+.advertisement {
+  width: 350px;
+  padding: 20px;
+  background: #242424;
+  color: #f1f1f1;
+  text-align: center;
+  border-radius: 8px;
+  flex: 0 0 auto;
+}
+
+.advertisement h6 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.advertisement p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.ad-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ad-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #037bee;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.ad-btn:hover {
+  background: #005bb5;
+}
+
+.demo-btn {
+  background: #ff5722;
+}
+
+.demo-btn:hover {
+  background: #e64a19;
+}
+
+.order-btn {
+  background: #037bee;
+}
+
+.order-btn:hover {
+  background: #005bb5;
+}
+
+/* Desain Responsif */
+@media screen and (max-width: 470px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .advertisement {
+      width: 100%;
+  }
 }
