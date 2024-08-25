@@ -8,13 +8,12 @@
 }
 
 body {
-  background-image: url('images/bg.jpg'); /* Ganti dengan path gambar latar belakang Anda */
+  background: #121212 url('images/bgg.jpg') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   min-height: 100vh;
-  color: #f1f1f1;
-  position: relative; /* Untuk positioning footer yang fixed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Gaya Header */
@@ -36,7 +35,7 @@ header {
 }
 
 .header-content p {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 /* Gaya Galeri */
@@ -58,23 +57,55 @@ header {
 }
 
 .gallery-item {
-  width: 300px;
+  position: relative;
+  width: 300px; /* Atur lebar sesuai kebutuhan */
   background: rgba(32, 32, 32, 0.7); /* Transparansi latar belakang item */
-  padding: 15px;
   border-radius: 8px;
+  overflow: hidden; /* Pastikan watermark tetap dalam area gambar */
   text-align: center;
 }
 
+/* Gaya Gambar */
 .gallery-item img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 8px;
+  pointer-events: none; /* Mencegah gambar dari klik */
 }
+
+/* Watermark */
+.gallery-item::after {
+  content: "Hope Team"; /* Teks watermark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg); /* Posisikan watermark di tengah dan miringkan */
+  font-size: 50px; /* Ukuran font watermark */
+  color: rgba(255, 255, 255, 0.7); /* Warna putih transparan */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Bayangan teks agar lebih terbaca */
+  pointer-events: none; /* Pastikan watermark tidak dapat di-klik */
+  white-space: nowrap; /* Mencegah teks membungkus */
+  opacity: 0.8; /* Transparansi watermark */
+}
+
 
 .gallery-item p {
   margin-top: 10px;
-  font-size: 14px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #f1f1f1;
 }
+
+/* Mencegah Klik Kanan */
+body {
+  -webkit-user-select: none; /* Mencegah pemilihan teks di WebKit browsers */
+  -moz-user-select: none; /* Mencegah pemilihan teks di Firefox */
+  -ms-user-select: none; /* Mencegah pemilihan teks di Internet Explorer/Edge */
+  user-select: none; /* Mencegah pemilihan teks di browsers modern */
+}
+
 
 /* Gaya Footer */
 footer {
