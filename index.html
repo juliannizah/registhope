@@ -15,13 +15,13 @@
 
     // Konfigurasi Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyBVBvT7bClUAzsiZmsBUqB9uJxh4Du4P7I",
-      authDomain: "hope-tournament-registration.firebaseapp.com",
-      databaseURL: "https://hope-tournament-registration-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "hope-tournament-registration",
-      storageBucket: "hope-tournament-registration.appspot.com",
-      messagingSenderId: "559491234310",
-      appId: "1:559491234310:web:42c62d14481334219ae187"
+      apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+      authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+      storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.REACT_APP_FIREBASE_APP_ID
     };
 
     // Inisialisasi Firebase
